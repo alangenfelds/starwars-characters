@@ -27,11 +27,11 @@ describe("CharacterModal", () => {
     render(<CharacterModal character={mockCharacter} onClose={mockOnClose} />);
 
     expect(screen.getByText("Luke Skywalker")).toBeInTheDocument();
-    expect(screen.getByText("Height: 1.72 m")).toBeInTheDocument();
-    expect(screen.getByText("Mass: 77 kg")).toBeInTheDocument();
-    expect(screen.getByText("Date Added: 09-12-2014")).toBeInTheDocument();
-    expect(screen.getByText("Number of Films: 2")).toBeInTheDocument();
-    expect(screen.getByText("Birth Year: 19BBY")).toBeInTheDocument();
+    expect(screen.getByText("1.72 m")).toBeInTheDocument();
+    expect(screen.getByText("77 kg")).toBeInTheDocument();
+    expect(screen.getByText("09-12-2014")).toBeInTheDocument();
+    expect(screen.getByText("2")).toBeInTheDocument();
+    expect(screen.getByText("19BBY")).toBeInTheDocument();
   });
 
   it("calls onClose when clicking the close button", () => {
@@ -59,6 +59,6 @@ describe("CharacterModal", () => {
     const tallCharacter = { ...mockCharacter, height: "200" };
     render(<CharacterModal character={tallCharacter} onClose={mockOnClose} />);
 
-    expect(screen.getByText("Height: 2.00 m")).toBeInTheDocument();
+    expect(screen.getByText("2.00 m")).toBeInTheDocument();
   });
 });

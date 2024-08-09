@@ -38,11 +38,26 @@ const CharacterModal: React.FC<CharacterModalProps> = ({
           ×
         </button>
         <h2>{name}</h2>
-        <p>Height: {(parseInt(height) / 100).toFixed(2)} m</p>
-        <p>Mass: {mass} kg</p>
-        <p>Date Added: {dateAdded}</p>
-        <p>Number of Films: {films.length}</p>
-        <p>Birth Year: {birth_year}</p>
+        <div className="character-info">
+          <div>Height:</div>
+          <div>{(parseInt(height) / 100).toFixed(2)} m</div>
+        </div>
+        <div className="character-info">
+          <div>Mass:</div>
+          <div>{mass} kg</div>
+        </div>
+        <div className="character-info">
+          <div>Date Added:</div>
+          <div> {dateAdded}</div>
+        </div>
+        <div className="character-info">
+          <div>Number of Films:</div>
+          <div> {films.length}</div>
+        </div>
+        <div className="character-info">
+          <div>Birth Year:</div>
+          <div> {birth_year}</div>
+        </div>
       </div>
     </div>
   );

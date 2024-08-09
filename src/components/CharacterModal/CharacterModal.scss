@@ -20,11 +20,34 @@
   width: 100%;
   text-align: center;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+
   background-color: var(--modal-background-color);
   transition: background-color 0.3s;
 
   @media (max-width: $mobile-breakpoint) {
     max-width: 400px;
+  }
+
+  h2 {
+    width: 100%;
+    border-bottom: 1px dashed var(--character-card-border-color);
+    padding-bottom: 16px;
+    color: var(--star-wars-color);
+  }
+
+  .character-info {
+    justify-self: center;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $mobile-breakpoint) {
+      width: 60%;
+    }
   }
 }
 
