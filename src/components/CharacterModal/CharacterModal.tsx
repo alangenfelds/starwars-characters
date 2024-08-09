@@ -2,7 +2,7 @@ import React from "react";
 import "./CharacterModal.scss";
 import { Character } from "../../types";
 
-interface CharacterModalProps {
+export interface CharacterModalProps {
   character: Character | null;
   onClose: () => void;
 }
@@ -14,7 +14,6 @@ const CharacterModal: React.FC<CharacterModalProps> = ({
   if (!character) return null;
 
   const { name, height, mass, created, films, birth_year } = character;
-  // const dateAdded = new Date(created).toLocaleDateString("en-GB");
 
   const dateAdded = new Date(created)
     .toLocaleDateString("en-GB", {
@@ -25,8 +24,16 @@ const CharacterModal: React.FC<CharacterModalProps> = ({
     .replace(/\//g, "-");
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+    <div
+      className="modal-overlay"
+      onClick={onClose}
+      data-testid="modal-overlay"
+    >
+      <div
+        className="modal-content"
+        data-testid="modal-content"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button className="close-button" onClick={onClose}>
           ×
         </button>

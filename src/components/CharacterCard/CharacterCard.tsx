@@ -2,7 +2,7 @@ import React from "react";
 import "./CharacterCard.scss";
 import { CharacterWithImage } from "../../types";
 
-interface CharacterCardProps {
+export interface CharacterCardProps {
   character: CharacterWithImage;
   onClick: (character: CharacterWithImage) => void;
 }
