@@ -1,0 +1,44 @@
+@import "../../variables";
+
+.character-card {
+  border: 1px solid var(--character-card-border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.1s;
+  cursor: pointer;
+  height: 290px;
+  background-color: var(--card-background-color);
+  transition: all 0.2s;
+
+  @media (max-width: $mobile-breakpoint) {
+    height: 230px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover {
+      box-shadow: var(--character-card-box-shadow);
+      transform: translateY(-3px);
+      background-color: var(--background-color);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+
+    @media (max-width: $mobile-breakpoint) {
+      height: 150px;
+    }
+  }
+
+  h2 {
+    padding: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+
+    @media (max-width: $mobile-breakpoint) {
+      font-size: 1.2rem;
+    }
+  }
+}
